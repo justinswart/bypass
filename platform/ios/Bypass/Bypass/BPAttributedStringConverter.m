@@ -46,11 +46,11 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
 {
     NSMutableAttributedString *target = [[NSMutableAttributedString alloc] init];
 
+    [target addAttribute:NSForegroundColorAttributeName value:[_displaySettings defaultColor] range:NSMakeRange(0, target.length)];
+    
     for (BPElement *element in [document elements]) {
         [self convertElement:element toTarget:target];
     }
-
-    [target addAttribute:NSForegroundColorAttributeName value:[_displaySettings defaultColor] range:NSMakeRange(0, target.length)];
     
     return target;
 }
@@ -383,25 +383,32 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
     switch ([element[@"level"] integerValue]) {
         case 1:
             attributes[NSFontAttributeName] = [_displaySettings h1Font];
+            attributes[NSForegroundColorAttributeName] = [_displaySettings h1Color];
             break;
         case 2:
             [paragraphStyle setParagraphSpacing:[_displaySettings paragraphSpacingH2]];
             attributes[NSFontAttributeName] = [_displaySettings h2Font];
+            attributes[NSForegroundColorAttributeName] = [_displaySettings h2Color];
             break;
         case 3:
             attributes[NSFontAttributeName] = [_displaySettings h3Font];
+            attributes[NSForegroundColorAttributeName] = [_displaySettings h3Color];
             break;
         case 4:
             attributes[NSFontAttributeName] = [_displaySettings h4Font];
+            attributes[NSForegroundColorAttributeName] = [_displaySettings h4Color];
             break;
         case 5:
             attributes[NSFontAttributeName] = [_displaySettings h5Font];
+            attributes[NSForegroundColorAttributeName] = [_displaySettings h5Color];
             break;
         case 6:
             attributes[NSFontAttributeName] = [_displaySettings h6Font];
+            attributes[NSForegroundColorAttributeName] = [_displaySettings h6Color];
             break;
         default:
             attributes[NSFontAttributeName] = [_displaySettings defaultFont];
+            attributes[NSForegroundColorAttributeName] = [_displaySettings defaultColor];
             break;
     }
     

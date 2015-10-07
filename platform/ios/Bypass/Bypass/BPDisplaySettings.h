@@ -15,6 +15,12 @@
 @property(nonatomic) UIColor *quoteColor;
 @property(nonatomic) UIColor *codeColor;
 @property(nonatomic) UIColor *linkColor;
+@property(nonatomic) UIColor *h1Color;
+@property(nonatomic) UIColor *h2Color;
+@property(nonatomic) UIColor *h3Color;
+@property(nonatomic) UIColor *h4Color;
+@property(nonatomic) UIColor *h5Color;
+@property(nonatomic) UIColor *h6Color;
 
 @property(nonatomic) UIFont *defaultFont;
 @property(nonatomic) UIFont *boldFont;
