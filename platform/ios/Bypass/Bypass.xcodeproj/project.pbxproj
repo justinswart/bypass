@@ -288,7 +288,7 @@
 			name = BypassTests;
 			productName = BypassTests;
 			productReference = 5E5BC82916E004FA00165503 /* BypassTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -296,7 +296,7 @@
 		5E5BC81016E004FA00165503 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Uncodin;
 			};
 			buildConfigurationList = 5E5BC81316E004FA00165503 /* Build configuration list for PBXProject "Bypass" */;
@@ -410,6 +410,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -490,6 +491,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bypass/Bypass-Prefix.pch";
 				INFOPLIST_FILE = "BypassTests/BypassTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uncodin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -505,6 +507,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Bypass/Bypass-Prefix.pch";
 				INFOPLIST_FILE = "BypassTests/BypassTests-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.uncodin.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = octest;
 			};

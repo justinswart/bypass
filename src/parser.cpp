@@ -127,7 +127,7 @@ namespace Bypass {
 			Element * element = &((*it).second);
 
 			if (boost::ends_with(element->text, controlCharacters)) {
-				boost::erase_tail(element->text, controlCharacters.size());
+				boost::erase_tail(element->text, (int)controlCharacters.size());
 			}
 		}
 	}
