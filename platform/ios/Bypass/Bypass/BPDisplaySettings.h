@@ -38,6 +38,7 @@
 @property(nonatomic) UIFont *h5Font;
 @property(nonatomic) UIFont *h6Font;
 
+@property(nonatomic) BOOL    renderBullet;
 @property(nonatomic) CGFloat bulletIndentation;
 @property(nonatomic) CGFloat codeIndentation;
 @property(nonatomic) CGFloat quoteIndentation;

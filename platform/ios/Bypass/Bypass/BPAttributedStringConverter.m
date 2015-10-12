@@ -350,11 +350,13 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
         NSForegroundColorAttributeName : bulletColor
     };
     
-    NSAttributedString *attributedBullet;
-    attributedBullet = [[NSAttributedString alloc] initWithString:@"• "
-                                                       attributes:bulletAttributes];
-    [target insertAttributedString:attributedBullet atIndex:effectiveRange.location];
-
+    if ([_displaySettings renderBullet])
+    {
+        NSAttributedString *attributedBullet;
+        attributedBullet = [[NSAttributedString alloc] initWithString:@"• "
+                                                           attributes:bulletAttributes];
+        [target insertAttributedString:attributedBullet atIndex:effectiveRange.location];
+    }
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphStyle setLineSpacing:[_displaySettings lineSpacingSmall]];
