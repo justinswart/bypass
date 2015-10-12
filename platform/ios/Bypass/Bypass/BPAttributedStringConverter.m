@@ -207,7 +207,10 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
 - (void)renderBoldElement:(BPElement *)element
                  toTarget:(NSMutableAttributedString *)target
 {
-    [self renderSpanElement:element withFont:[_displaySettings boldFont] toTarget:target];
+    if ([_displaySettings boldColor])
+        [self renderSpanElement:element withFont:[_displaySettings boldFont] attributes:[NSMutableDictionary dictionaryWithDictionary:@{NSForegroundColorAttributeName : [_displaySettings boldColor]}] toTarget:target];
+    else
+        [self renderSpanElement:element withFont:[_displaySettings boldFont] toTarget:target];
 }
 
 - (void)renderItalicElement:(BPElement *)element
