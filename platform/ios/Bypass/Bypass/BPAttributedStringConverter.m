@@ -189,7 +189,13 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
 
 - (void)renderTextElement:(BPElement *)element toTarget:(NSMutableAttributedString *)target
 {
-    [self renderSpanElement:element withFont:[_displaySettings defaultFont] toTarget:target];
+    if ([_displaySettings defaultColor])
+        [self renderSpanElement:element withFont:[_displaySettings defaultFont] attributes:[NSMutableDictionary dictionaryWithDictionary:@{NSForegroundColorAttributeName : [_displaySettings defaultColor]}] toTarget:target];
+    else
+        [self renderSpanElement:element withFont:[_displaySettings defaultFont] toTarget:target];
+    
+    if ([_displaySettings defaultFontKerning])
+        [target addAttribute:NSKernAttributeName value:[_displaySettings defaultFontKerning] range:NSMakeRange(0, target.length)];
 }
 
 - (void)renderBoldItalicElement:(BPElement *)element

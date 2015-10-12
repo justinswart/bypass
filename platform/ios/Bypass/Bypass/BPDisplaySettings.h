@@ -22,6 +22,8 @@
 @property(nonatomic) UIColor *h5Color;
 @property(nonatomic) UIColor *h6Color;
 
+@property(nonatomic) NSNumber *defaultFontKerning;
+
 @property(nonatomic) UIFont *defaultFont;
 @property(nonatomic) UIFont *boldFont;
 @property(nonatomic) UIFont *italicFont;
