@@ -44,9 +44,19 @@
 
     self.paragraphLineSpacing = 1.2f;
     self.paragraphLineSpacingHeading = 1.2f;
+    self.defaultAlignment = NSTextAlignmentLeft;
 
   }
   return self;
+}
+
+- (void)removeAllSpacing
+{
+    self.paragraphSpacing = 0.0f;
+    self.paragraphSpacingHeading = 0.0f;
+    self.paragraphSpacingCode = 0.0f;
+    self.paragraphLineSpacing = 0.0f;
+    self.paragraphLineSpacingHeading = 0.0f;
 }
 
 - (UIFont *)boldItalicFont

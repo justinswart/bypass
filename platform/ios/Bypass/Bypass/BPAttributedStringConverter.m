@@ -52,6 +52,10 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
         [self convertElement:element toTarget:target];
     }
     
+    NSMutableParagraphStyle *paragraphyStyle = [[NSMutableParagraphStyle alloc] init];
+    [paragraphyStyle setAlignment:_displaySettings.defaultAlignment];
+    [target addAttribute:NSParagraphStyleAttributeName value:paragraphyStyle range:NSMakeRange(0, target.length)];
+    
     return target;
 }
 

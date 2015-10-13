@@ -23,7 +23,8 @@
 @property(nonatomic) UIColor *h5Color;
 @property(nonatomic) UIColor *h6Color;
 
-@property(nonatomic) NSNumber *defaultFontKerning;
+@property(nonatomic) NSNumber        *defaultFontKerning;
+@property(nonatomic) NSTextAlignment defaultAlignment;
 
 @property(nonatomic) UIFont *defaultFont;
 @property(nonatomic) UIFont *boldFont;
@@ -60,5 +61,7 @@
 
 @property(nonatomic) CGFloat headerFirstLineHeadIndent;
 @property(nonatomic) CGFloat headerHeadIndent;
+
+- (void)removeAllSpacing;
 
 @end
