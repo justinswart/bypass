@@ -215,6 +215,9 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
         [self renderSpanElement:element withFont:[_displaySettings boldFont] attributes:[NSMutableDictionary dictionaryWithDictionary:@{NSForegroundColorAttributeName : [_displaySettings boldColor]}] toTarget:target];
     else
         [self renderSpanElement:element withFont:[_displaySettings boldFont] toTarget:target];
+    
+    if ([_displaySettings boldFontKerning])
+        [target addAttribute:NSKernAttributeName value:[_displaySettings boldFontKerning] range:NSMakeRange(0, target.length)];
 }
 
 - (void)renderItalicElement:(BPElement *)element
@@ -399,31 +402,38 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
         case 1:
             attributes[NSFontAttributeName] = [_displaySettings h1Font];
             attributes[NSForegroundColorAttributeName] = [_displaySettings h1Color];
+            attributes[NSKernAttributeName] = [_displaySettings h1FontKerning];
             break;
         case 2:
             [paragraphStyle setParagraphSpacing:[_displaySettings paragraphSpacingH2]];
             attributes[NSFontAttributeName] = [_displaySettings h2Font];
             attributes[NSForegroundColorAttributeName] = [_displaySettings h2Color];
+            attributes[NSKernAttributeName] = [_displaySettings h2FontKerning];
             break;
         case 3:
             attributes[NSFontAttributeName] = [_displaySettings h3Font];
             attributes[NSForegroundColorAttributeName] = [_displaySettings h3Color];
+            attributes[NSKernAttributeName] = [_displaySettings h3FontKerning];
             break;
         case 4:
             attributes[NSFontAttributeName] = [_displaySettings h4Font];
             attributes[NSForegroundColorAttributeName] = [_displaySettings h4Color];
+            attributes[NSKernAttributeName] = [_displaySettings h4FontKerning];
             break;
         case 5:
             attributes[NSFontAttributeName] = [_displaySettings h5Font];
             attributes[NSForegroundColorAttributeName] = [_displaySettings h5Color];
+            attributes[NSKernAttributeName] = [_displaySettings h5FontKerning];
             break;
         case 6:
             attributes[NSFontAttributeName] = [_displaySettings h6Font];
             attributes[NSForegroundColorAttributeName] = [_displaySettings h6Color];
+            attributes[NSKernAttributeName] = [_displaySettings h6FontKerning];
             break;
         default:
             attributes[NSFontAttributeName] = [_displaySettings defaultFont];
             attributes[NSForegroundColorAttributeName] = [_displaySettings defaultColor];
+            attributes[NSKernAttributeName] = [_displaySettings defaultFontKerning];
             break;
     }
     

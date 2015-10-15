@@ -23,8 +23,16 @@
 @property(nonatomic) UIColor *h5Color;
 @property(nonatomic) UIColor *h6Color;
 
-@property(nonatomic) NSNumber        *defaultFontKerning;
 @property(nonatomic) NSTextAlignment defaultAlignment;
+
+@property(nonatomic) NSNumber *defaultFontKerning;
+@property(nonatomic) NSNumber *boldFontKerning;
+@property(nonatomic) NSNumber *h1FontKerning;
+@property(nonatomic) NSNumber *h2FontKerning;
+@property(nonatomic) NSNumber *h3FontKerning;
+@property(nonatomic) NSNumber *h4FontKerning;
+@property(nonatomic) NSNumber *h5FontKerning;
+@property(nonatomic) NSNumber *h6FontKerning;
 
 @property(nonatomic) UIFont *defaultFont;
 @property(nonatomic) UIFont *boldFont;
