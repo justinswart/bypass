@@ -59,6 +59,15 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
     return target;
 }
 
+- (BOOL)markdownContainsList:(BPDocument *)document
+{
+    for (BPElement *element in [document elements]) {
+        if ([element elementType] == BPList)
+            return YES;
+    }
+    
+    return NO;
+}
 
 - (void)convertElement:(BPElement *)element toTarget:(NSMutableAttributedString *)target
 {
@@ -73,9 +82,7 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
     // characters
     
     if (elementType == BPList) {
-        if ([[element parentElement] elementType] == BPListItem) {
-            [self insertNewlineIntoTarget:target];
-        }
+        [self insertNewlineIntoTarget:target];
     } else if (elementType == BPAutoLink) {
         [self renderLinkElement:element toTarget:target];
     } else if (elementType == BPCodeSpan) {

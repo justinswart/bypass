@@ -33,5 +33,6 @@ OBJC_EXPORT NSString *const BPLinkStyleAttributeName;
 @property(nonatomic, strong) BPDisplaySettings *displaySettings;
 
 - (NSAttributedString *)convertDocument:(BPDocument *)document;
+- (BOOL)markdownContainsList:(BPDocument *)document;
 
 @end
