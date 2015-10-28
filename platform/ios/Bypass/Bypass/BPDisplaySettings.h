@@ -59,6 +59,7 @@
 
 @property(nonatomic) CGFloat paragraphSpacingCode;
 
+@property(nonatomic) CGFloat defaultLineSpacing;
 @property(nonatomic) CGFloat paragraphLineSpacing;
 @property(nonatomic) CGFloat paragraphLineSpacingHeading;
 

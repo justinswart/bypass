@@ -54,6 +54,7 @@ NSString *const BPLinkStyleAttributeName = @"NSLinkAttributeName";
     
     NSMutableParagraphStyle *paragraphyStyle = [[NSMutableParagraphStyle alloc] init];
     [paragraphyStyle setAlignment:_displaySettings.defaultAlignment];
+    [paragraphyStyle setLineSpacing:_displaySettings.defaultLineSpacing];
     [target addAttribute:NSParagraphStyleAttributeName value:paragraphyStyle range:NSMakeRange(0, target.length)];
     
     return target;
